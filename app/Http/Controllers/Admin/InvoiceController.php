@@ -47,7 +47,7 @@ class InvoiceController extends Controller
     public function create()
     {
         $tenants = Tenant::with(['subscriptions' => function($q) {
-            $q->where('status', 'active')->with('plan');
+            $q->where('status', 'active')->with('subscriptionPlan');
         }])->orderBy('business_name')->get(['id', 'business_name', 'owner_name', 'email', 'phone', 'address']);
         $plans = SubscriptionPlan::where('is_active', true)->get(['id', 'name', 'price', 'currency', 'description']);
 
@@ -126,7 +126,7 @@ class InvoiceController extends Controller
     {
         $invoice->load('items');
         $tenants = Tenant::with(['subscriptions' => function($q) {
-            $q->where('status', 'active')->with('plan');
+            $q->where('status', 'active')->with('subscriptionPlan');
         }])->orderBy('business_name')->get(['id', 'business_name', 'owner_name', 'email', 'phone', 'address']);
         $plans = SubscriptionPlan::where('is_active', true)->get(['id', 'name', 'price', 'currency', 'description']);
 

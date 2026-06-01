@@ -80,16 +80,17 @@ export default function InvoiceCreate({ tenants, plans, default_invoice_number }
                     // Auto-fill active subscription as item if exists and items are empty
                     if (tenant.subscriptions && tenant.subscriptions.length > 0 && d.items.length === 0) {
                         const sub = tenant.subscriptions[0];
-                        if (sub.plan) {
+                        const plan = sub.subscription_plan || sub.plan;
+                        if (plan) {
                             newData.items = [{
-                                item_name: `Paket Langganan: ${sub.plan.name}`,
-                                description: `Tagihan untuk paket ${sub.plan.name}`,
+                                item_name: `Paket Langganan: ${plan.name}`,
+                                description: `Tagihan untuk paket ${plan.name}`,
                                 quantity: 1,
-                                unit_price: sub.plan.price,
-                                total_price: sub.plan.price
+                                unit_price: plan.price,
+                                total_price: plan.price
                             }];
-                            newData.subtotal = sub.plan.price;
-                            newData.total = sub.plan.price - newData.discount + newData.tax;
+                            newData.subtotal = plan.price;
+                            newData.total = plan.price - newData.discount + newData.tax;
                         }
                     }
                     return newData;
