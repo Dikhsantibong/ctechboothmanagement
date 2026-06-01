@@ -1,4 +1,4 @@
-import AuthLayoutTemplate from '@/layouts/auth/auth-simple-layout';
+import AuthLayoutTemplate from '@/layouts/auth/auth-split-layout';
 import { useFlashToast } from '@/hooks/use-flash-toast';
 
 export default function AuthLayout({
