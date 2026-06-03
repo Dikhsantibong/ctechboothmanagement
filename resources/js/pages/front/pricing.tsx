@@ -100,67 +100,67 @@ function PricingContent() {
             <div className="container mx-auto px-6 max-w-7xl">
                 {/* Hero */}
                 <div className="text-center mb-20">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6"><span className="gold-gradient-text">{t.hero.title}</span></h1>
-                    <p className="text-[#B8C0CC] text-lg max-w-2xl mx-auto leading-relaxed">{t.hero.desc}</p>
+                    <h1 className="text-4xl md:text-6xl font-bold mb-6"><span className="blue-gradient-text">{t.hero.title}</span></h1>
+                    <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">{t.hero.desc}</p>
                 </div>
 
                 {/* Pricing Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto items-center mb-28">
                     
                     {/* Starter */}
-                    <div className="glass-card p-8 rounded-[24px] border border-white/5 flex flex-col">
+                    <div className="glass-card p-8 rounded-[24px] border border-gray-200 flex flex-col">
                         <h3 className="text-xl font-medium mb-2">{t.starter.name}</h3>
-                        <p className="text-[#B8C0CC] text-sm mb-6">{t.starter.desc}</p>
+                        <p className="text-gray-600 text-sm mb-6">{t.starter.desc}</p>
                         <div className="mb-8">
                             <span className="text-4xl font-bold">{t.starter.price}</span>
-                            <span className="text-[#B8C0CC] text-sm">{t.perMonth}</span>
+                            <span className="text-gray-600 text-sm">{t.perMonth}</span>
                         </div>
                         <ul className="space-y-4 mb-8 flex-1">
                             {t.starter.features.map((f, i) => (
-                                <li key={i} className="flex items-center gap-3 text-sm text-[#B8C0CC]">
-                                    <CheckCircle2 className="w-4 h-4 text-white/50 shrink-0" /> {f}
+                                <li key={i} className="flex items-center gap-3 text-sm text-gray-600">
+                                    <CheckCircle2 className="w-4 h-4 text-gray-400 shrink-0" /> {f}
                                 </li>
                             ))}
                         </ul>
-                        <button className="w-full py-3 rounded-full border border-white/20 hover:bg-white/5 transition-colors text-sm font-medium">{t.starter.btn}</button>
+                        <button className="w-full py-3 rounded-full border border-gray-300 hover:bg-gray-50 transition-colors text-sm font-medium">{t.starter.btn}</button>
                     </div>
 
                     {/* Professional */}
-                    <div className="bg-[#111] p-8 rounded-[24px] gold-border gold-glow relative transform md:-translate-y-4 flex flex-col">
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 bg-gradient-to-r from-[#D4AF37] to-[#F7D774] text-black text-xs font-bold rounded-full uppercase tracking-wider">
+                    <div className="bg-gray-100 p-8 rounded-[24px] blue-border blue-glow relative transform md:-translate-y-4 flex flex-col">
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 bg-gradient-to-r from-[#3B82F6] to-[#1E40AF] text-white text-xs font-bold rounded-full uppercase tracking-wider">
                             {t.pro.badge}
                         </div>
-                        <h3 className="text-xl font-medium mb-2 text-[#F7D774]">{t.pro.name}</h3>
-                        <p className="text-[#B8C0CC] text-sm mb-6">{t.pro.desc}</p>
+                        <h3 className="text-xl font-medium mb-2 text-[#3B82F6]">{t.pro.name}</h3>
+                        <p className="text-gray-600 text-sm mb-6">{t.pro.desc}</p>
                         <div className="mb-8">
                             <span className="text-4xl font-bold">{t.pro.price}</span>
-                            <span className="text-[#B8C0CC] text-sm">{t.perMonth}</span>
+                            <span className="text-gray-600 text-sm">{t.perMonth}</span>
                         </div>
                         <ul className="space-y-4 mb-8 flex-1">
                             {t.pro.features.map((f, i) => (
-                                <li key={i} className="flex items-center gap-3 text-sm text-white">
-                                    <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0" /> {f}
+                                <li key={i} className="flex items-center gap-3 text-sm text-[#1A1A1A]">
+                                    <CheckCircle2 className="w-4 h-4 text-[#3B82F6] shrink-0" /> {f}
                                 </li>
                             ))}
                         </ul>
-                        <button className="w-full py-3 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F7D774] hover:opacity-90 transition-opacity text-black text-sm font-bold shadow-[0_0_15px_rgba(212,175,55,0.4)]">{t.pro.btn}</button>
+                        <button className="w-full py-3 rounded-full bg-gradient-to-r from-[#3B82F6] to-[#1E40AF] hover:opacity-90 transition-opacity text-white text-sm font-bold shadow-[0_0_15px_rgba(59,130,246,0.4)]">{t.pro.btn}</button>
                     </div>
 
                     {/* Enterprise */}
-                    <div className="glass-card p-8 rounded-[24px] border border-white/5 flex flex-col">
+                    <div className="glass-card p-8 rounded-[24px] border border-gray-200 flex flex-col">
                         <h3 className="text-xl font-medium mb-2">{t.enterprise.name}</h3>
-                        <p className="text-[#B8C0CC] text-sm mb-6">{t.enterprise.desc}</p>
+                        <p className="text-gray-600 text-sm mb-6">{t.enterprise.desc}</p>
                         <div className="mb-8">
                             <span className="text-4xl font-bold">{t.enterprise.price}</span>
                         </div>
                         <ul className="space-y-4 mb-8 flex-1">
                             {t.enterprise.features.map((f, i) => (
-                                <li key={i} className="flex items-center gap-3 text-sm text-[#B8C0CC]">
-                                    <CheckCircle2 className="w-4 h-4 text-white/50 shrink-0" /> {f}
+                                <li key={i} className="flex items-center gap-3 text-sm text-gray-600">
+                                    <CheckCircle2 className="w-4 h-4 text-gray-400 shrink-0" /> {f}
                                 </li>
                             ))}
                         </ul>
-                        <button className="w-full py-3 rounded-full border border-white/20 hover:bg-white/5 transition-colors text-sm font-medium">{t.enterprise.btn}</button>
+                        <button className="w-full py-3 rounded-full border border-gray-300 hover:bg-gray-50 transition-colors text-sm font-medium">{t.enterprise.btn}</button>
                     </div>
                 </div>
 
@@ -175,15 +175,15 @@ function PricingContent() {
                             <div key={idx} className="glass-card rounded-2xl overflow-hidden">
                                 <button
                                     onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                                    className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
+                                    className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
                                 >
-                                    <span className="font-medium text-white flex items-center gap-3">
-                                        <HelpCircle className="w-5 h-5 text-[#D4AF37] shrink-0" /> {item.q}
+                                    <span className="font-medium text-[#1A1A1A] flex items-center gap-3">
+                                        <HelpCircle className="w-5 h-5 text-[#3B82F6] shrink-0" /> {item.q}
                                     </span>
-                                    <ArrowRight className={`w-4 h-4 text-[#B8C0CC] transition-transform duration-200 ${openFaq === idx ? 'rotate-90' : ''}`} />
+                                    <ArrowRight className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${openFaq === idx ? 'rotate-90' : ''}`} />
                                 </button>
                                 <div className={`overflow-hidden transition-all duration-300 ${openFaq === idx ? 'max-h-40 pb-6' : 'max-h-0'}`}>
-                                    <p className="px-6 pl-14 text-[#B8C0CC] text-sm leading-relaxed">{item.a}</p>
+                                    <p className="px-6 pl-14 text-gray-600 text-sm leading-relaxed">{item.a}</p>
                                 </div>
                             </div>
                         ))}

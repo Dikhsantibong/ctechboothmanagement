@@ -138,6 +138,25 @@
     }
 
     body {
-        @apply bg-background text-foreground;
+        @apply bg-[#F7F5F0] text-[#111111];
+    }
+}
+
+@layer components {
+    .brutal-card {
+        @apply bg-white border-[3px] border-[#111111] rounded-lg transition-transform duration-200 ease-out;
+        box-shadow: 8px 8px 0px #111111;
+    }
+    .brutal-card:hover {
+        @apply -translate-x-1 -translate-y-1;
+        box-shadow: 12px 12px 0px #111111;
+    }
+    .brutal-btn {
+        @apply inline-flex items-center justify-center px-8 py-4 font-bold uppercase tracking-wide border-[3px] border-[#111111] rounded-md transition-all duration-200 ease-out active:translate-y-0 active:translate-x-0 active:shadow-[0_0_0_#111111];
+        box-shadow: 6px 6px 0px #111111;
+    }
+    .brutal-btn:hover {
+        @apply -translate-x-1 -translate-y-1;
+        box-shadow: 10px 10px 0px #111111;
     }
 }

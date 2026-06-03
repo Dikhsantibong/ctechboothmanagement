@@ -122,19 +122,19 @@ function TestimonialsContent() {
             <div className="container mx-auto px-6 max-w-7xl">
                 {/* Hero */}
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#D4AF37]/10 mb-6">
-                        <Quote className="w-8 h-8 text-[#D4AF37]" />
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#3B82F6]/10 mb-6">
+                        <Quote className="w-8 h-8 text-[#3B82F6]" />
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6"><span className="gold-gradient-text">{t.hero.title}</span></h1>
-                    <p className="text-[#B8C0CC] text-lg max-w-2xl mx-auto leading-relaxed">{t.hero.desc}</p>
+                    <h1 className="text-4xl md:text-6xl font-bold mb-6"><span className="blue-gradient-text">{t.hero.title}</span></h1>
+                    <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">{t.hero.desc}</p>
                 </div>
 
                 {/* Stats Bar */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
                     {[t.statsBar.s1, t.statsBar.s2, t.statsBar.s3, t.statsBar.s4].map((stat, i) => (
                         <div key={i} className="glass-card p-6 rounded-2xl text-center">
-                            <div className="text-3xl font-bold gold-gradient-text">{stat.value}</div>
-                            <div className="text-[#B8C0CC] text-sm mt-1">{stat.label}</div>
+                            <div className="text-3xl font-bold blue-gradient-text">{stat.value}</div>
+                            <div className="text-gray-600 text-sm mt-1">{stat.label}</div>
                         </div>
                     ))}
                 </div>
@@ -142,22 +142,22 @@ function TestimonialsContent() {
                 {/* Testimonial Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {t.items.map((item, idx) => (
-                        <div key={idx} className="glass-card p-8 rounded-[24px] hover:bg-white/5 transition-colors group flex flex-col justify-between">
+                        <div key={idx} className="glass-card p-8 rounded-[24px] hover:bg-gray-50 transition-colors group flex flex-col justify-between">
                             {/* Stars */}
                             <div>
-                                <div className="flex text-[#D4AF37] mb-5">
+                                <div className="flex text-[#3B82F6] mb-5">
                                     {[...Array(5)].map((_, i) => (
                                         <Star key={i} className="w-4 h-4 fill-current" />
                                     ))}
                                 </div>
-                                <p className="text-base font-light italic leading-relaxed text-white/90 mb-8">
+                                <p className="text-base font-light italic leading-relaxed text-gray-700 mb-8">
                                     "{item.quote}"
                                 </p>
                             </div>
                             
                             {/* Author */}
-                            <div className="flex items-center gap-4 pt-6 border-t border-white/5">
-                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#D4AF37] to-black p-0.5 shrink-0">
+                            <div className="flex items-center gap-4 pt-6 border-t border-gray-200">
+                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#3B82F6] to-[#1E40AF] p-0.5 shrink-0">
                                     <img
                                         src={`https://i.pravatar.cc/150?u=${item.avatar}`}
                                         alt={item.name}
@@ -165,8 +165,8 @@ function TestimonialsContent() {
                                     />
                                 </div>
                                 <div>
-                                    <div className="font-medium text-white text-sm">{item.name}</div>
-                                    <div className="text-xs text-[#B8C0CC]">{item.role}</div>
+                                    <div className="font-medium text-[#1A1A1A] text-sm">{item.name}</div>
+                                    <div className="text-xs text-gray-600">{item.role}</div>
                                 </div>
                             </div>
                         </div>
