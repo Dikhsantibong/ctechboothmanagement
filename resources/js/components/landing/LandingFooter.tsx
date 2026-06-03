@@ -35,7 +35,7 @@ export default function LandingFooter() {
 
                     <div>
                         <div className="flex items-center gap-2 mb-6">
-                            <div className="w-5 h-5 bg-blue-600 rounded-sm"></div>
+                            <img src="/logo.png" alt="Ctechbooth" className="w-8 h-8 object-contain" />
                             <span className="text-xl font-bold tracking-tight text-gray-900">ctechbooth</span>
                         </div>
                         <p className="text-gray-500 font-medium text-sm leading-relaxed mb-6">
