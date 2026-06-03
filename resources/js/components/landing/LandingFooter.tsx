@@ -1,42 +1,63 @@
-import { Link } from '@inertiajs/react';
-
 export default function LandingFooter() {
     return (
-        <footer className="bg-[#F7F5F0] py-16 px-6">
-            <div className="container mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-4 gap-12 border-b-[3px] border-[#111111] pb-12 mb-8">
-                <div className="md:col-span-2">
-                    <div className="text-4xl font-black tracking-tighter text-[#111111] mb-4">
-                        PAYLO<span className="text-[#FF6B00]">.</span>
+        <footer className="bg-white pt-20 pb-10 px-6 border-t border-gray-200">
+            <div className="max-w-7xl mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
+                    <div>
+                        <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-6">Produk</h4>
+                        <ul className="space-y-4 text-gray-500 font-medium">
+                            <li><a href="#" className="hover:text-gray-900 transition-colors">Fitur</a></li>
+                            <li><a href="#" className="hover:text-gray-900 transition-colors">Harga</a></li>
+                            <li><a href="#" className="hover:text-gray-900 transition-colors">Keamanan</a></li>
+                            <li><a href="#" className="hover:text-gray-900 transition-colors">Changelog</a></li>
+                        </ul>
                     </div>
-                    <p className="text-lg font-bold text-[#525252] max-w-xs uppercase">
-                        Software Management Photobooth Indonesia
-                    </p>
-                </div>
-                
-                <div>
-                    <h4 className="text-lg font-black text-[#111111] mb-6 uppercase">Menu</h4>
-                    <ul className="space-y-4 font-bold text-[#525252]">
-                        <li><a href="#fitur" className="hover:text-[#FF6B00]">Fitur</a></li>
-                        <li><a href="#harga" className="hover:text-[#FF6B00]">Harga</a></li>
-                        <li><a href="#tentang" className="hover:text-[#FF6B00]">Tentang</a></li>
-                        <li><a href="#kontak" className="hover:text-[#FF6B00]">Kontak</a></li>
-                    </ul>
+                    
+                    <div>
+                        <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-6">Perusahaan</h4>
+                        <ul className="space-y-4 text-gray-500 font-medium">
+                            <li><a href="#" className="hover:text-gray-900 transition-colors">Tentang Kami</a></li>
+                            <li><a href="#" className="hover:text-gray-900 transition-colors">Karir</a></li>
+                            <li><a href="#" className="hover:text-gray-900 transition-colors">Blog</a></li>
+                            <li><a href="#" className="hover:text-gray-900 transition-colors">Kontak</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-6">Resource</h4>
+                        <ul className="space-y-4 text-gray-500 font-medium">
+                            <li><a href="#" className="hover:text-gray-900 transition-colors">Dokumentasi</a></li>
+                            <li><a href="#" className="hover:text-gray-900 transition-colors">Pusat Bantuan</a></li>
+                            <li><a href="#" className="hover:text-gray-900 transition-colors">Panduan Komunitas</a></li>
+                            <li><a href="#" className="hover:text-gray-900 transition-colors">API Reference</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div className="flex items-center gap-2 mb-6">
+                            <div className="w-5 h-5 bg-blue-600 rounded-sm"></div>
+                            <span className="text-xl font-bold tracking-tight text-gray-900">ctechbooth</span>
+                        </div>
+                        <p className="text-gray-500 font-medium text-sm leading-relaxed mb-6">
+                            Software manajemen photobooth terpercaya di Indonesia. Membantu mengotomatisasi ribuan transaksi setiap harinya.
+                        </p>
+                        <div className="flex gap-4">
+                            <a href="#" className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-gray-200 transition-colors">
+                                IG
+                            </a>
+                            <a href="#" className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-gray-200 transition-colors">
+                                LI
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <div>
-                    <h4 className="text-lg font-black text-[#111111] mb-6 uppercase">Legal</h4>
-                    <ul className="space-y-4 font-bold text-[#525252]">
-                        <li><a href="#" className="hover:text-[#FF6B00]">Syarat & Ketentuan</a></li>
-                        <li><a href="#" className="hover:text-[#FF6B00]">Kebijakan Privasi</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div className="container mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between font-bold text-[#525252] text-sm">
-                <p>&copy; {new Date().getFullYear()} PAYLO. All rights reserved.</p>
-                <div className="mt-4 md:mt-0 flex gap-4">
-                    <a href="#" className="hover:text-[#111111]">INSTAGRAM</a>
-                    <a href="#" className="hover:text-[#111111]">LINKEDIN</a>
+                <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm font-medium text-gray-400">
+                    <p>&copy; {new Date().getFullYear()} ctechbooth. All rights reserved.</p>
+                    <div className="flex gap-6">
+                        <a href="#" className="hover:text-gray-900 transition-colors">Syarat Ketentuan</a>
+                        <a href="#" className="hover:text-gray-900 transition-colors">Kebijakan Privasi</a>
+                    </div>
                 </div>
             </div>
         </footer>

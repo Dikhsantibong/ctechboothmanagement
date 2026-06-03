@@ -1,92 +1,101 @@
 import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
 import { Link } from '@inertiajs/react';
+import { CheckCircle2, ArrowRight, LayoutDashboard, MonitorSmartphone, Server } from 'lucide-react';
 
 export default function HeroSection() {
     return (
-        <section className="pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden bg-[#F7F5F0]">
-            <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                {/* Left */}
-                <motion.div 
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <div className="inline-block border-[3px] border-[#111111] px-4 py-1 font-bold text-sm bg-white mb-8 shadow-[4px_4px_0px_#111111] tracking-wide">
-                        SOFTWARE PHOTOBOOTH INDONESIA
-                    </div>
-                    
-                    <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-[1.1] mb-8 text-[#111111]">
-                        SOFTWARE PHOTOBOOTH UNTUK BISNIS YANG INGIN <span className="text-[#FF6B00] bg-[#111111] px-4 inline-block transform -rotate-2">TUMBUH</span>
-                    </h1>
-                    
-                    <p className="text-lg md:text-xl text-[#525252] mb-10 max-w-xl font-medium">
-                        Kelola tenant, transaksi, pelanggan, laporan, dan operasional photobooth dalam satu dashboard modern.
-                    </p>
-                    
-                    <div className="flex flex-col sm:flex-row gap-6 mb-12">
-                        <Link href="/register" className="brutal-btn bg-[#FF6B00] text-[#111111]">
-                            DEMO GRATIS
-                        </Link>
-                        <a href="#fitur" className="brutal-btn bg-white text-[#111111]">
-                            LIHAT FITUR
-                        </a>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-4 font-bold text-sm text-[#111111]">
-                        <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-[#00C853]" /> Cloud Based</div>
-                        <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-[#00C853]" /> Multi Tenant</div>
-                        <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-[#00C853]" /> Multi Cabang</div>
-                        <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-[#00C853]" /> Real Time Monitoring</div>
-                    </div>
-                </motion.div>
-
-                {/* Right Mockup */}
-                <motion.div 
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="relative"
-                >
-                    <div className="brutal-card bg-white p-2">
-                        {/* Mockup Header */}
-                        <div className="flex items-center gap-2 border-b-[3px] border-[#111111] pb-2 mb-4 px-2">
-                            <div className="w-3 h-3 rounded-full bg-[#111111]"></div>
-                            <div className="w-3 h-3 rounded-full bg-[#111111]"></div>
-                            <div className="w-3 h-3 rounded-full bg-[#111111]"></div>
-                            <div className="ml-4 text-xs font-bold font-mono">PAYLO DASHBOARD</div>
+        <section className="pt-32 pb-20 md:pt-40 md:pb-32 px-6">
+            <div className="max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                    {/* Left: Copywriting (7 cols) */}
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="lg:col-span-7"
+                    >
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-sm font-medium mb-6">
+                            <span className="relative flex h-2 w-2">
+                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                            </span>
+                            v2.0 is now live
                         </div>
-                        {/* Mockup Body */}
-                        <div className="p-4 grid grid-cols-2 gap-4">
-                            <div className="border-[3px] border-[#111111] p-4 bg-[#F7F5F0]">
-                                <div className="text-sm font-bold text-[#525252]">TOTAL TENANT</div>
-                                <div className="text-4xl font-black text-[#111111]">124</div>
-                            </div>
-                            <div className="border-[3px] border-[#111111] p-4 bg-[#FF6B00]">
-                                <div className="text-sm font-bold text-[#111111]">BOOTH ONLINE</div>
-                                <div className="text-4xl font-black text-[#111111]">98<span className="text-xl">/100</span></div>
-                            </div>
-                            <div className="border-[3px] border-[#111111] p-4 bg-white col-span-2">
-                                <div className="text-sm font-bold text-[#525252] mb-2">PENDAPATAN TENANT</div>
-                                <div className="h-24 bg-[#F7F5F0] border-[3px] border-[#111111] flex items-end px-4 gap-2 pb-2">
-                                    <div className="w-full bg-[#111111] h-[40%]"></div>
-                                    <div className="w-full bg-[#111111] h-[60%]"></div>
-                                    <div className="w-full bg-[#111111] h-[30%]"></div>
-                                    <div className="w-full bg-[#111111] h-[80%]"></div>
-                                    <div className="w-full bg-[#FF6B00] h-[100%]"></div>
+                        
+                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 leading-[1.1] mb-6">
+                            Operasional photobooth dalam <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">satu platform.</span>
+                        </h1>
+                        
+                        <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl leading-relaxed">
+                            ctechbooth membantu bisnis photobooth mengelola tenant, booth, pelanggan, transaksi, dan laporan secara real-time dari satu dashboard tersentralisasi.
+                        </p>
+                        
+                        <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                            <a 
+                                href="https://wa.me/628111111111?text=Halo%2C%20saya%20ingin%20mendapatkan%20informasi%20lebih%20lanjut%20mengenai%20ctechbooth." 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-gray-800 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5"
+                            >
+                                Konsultasi Gratis <ArrowRight className="w-4 h-4" />
+                            </a>
+                            <a href="#features" className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-medium text-gray-700 bg-white border border-gray-200 hover:bg-gray-50 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+                                Lihat Fitur
+                            </a>
+                        </div>
+                        
+                        <div className="flex flex-wrap items-center gap-6 text-sm font-medium text-gray-500">
+                            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500" /> Cloud Based</div>
+                            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500" /> Multi Tenant</div>
+                            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500" /> Real Time</div>
+                            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500" /> Multi Cabang</div>
+                        </div>
+                    </motion.div>
+
+                    {/* Right: Dashboard Preview (5 cols) */}
+                    <motion.div 
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="lg:col-span-5 relative"
+                    >
+                        {/* Abstract Mockup Grid */}
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="col-span-2 bg-white rounded-2xl border border-gray-200 p-5 shadow-sm hover:shadow-lg transition-all duration-300">
+                                <div className="flex items-center gap-3 mb-4 text-gray-500 text-sm font-medium">
+                                    <LayoutDashboard className="w-4 h-4" /> Pendapatan Tenant
+                                </div>
+                                <div className="text-3xl font-bold text-gray-900 mb-4">Rp 45.2M</div>
+                                <div className="flex items-end gap-2 h-20">
+                                    {[30, 40, 20, 50, 70, 45, 80].map((h, i) => (
+                                        <div key={i} className="flex-1 bg-blue-100 rounded-t-sm" style={{ height: `${h}%` }}>
+                                            {i === 6 && <div className="w-full h-full bg-blue-500 rounded-t-sm"></div>}
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
-                            <div className="border-[3px] border-[#111111] p-4 bg-[#00C853]">
-                                <div className="text-sm font-bold text-[#111111]">DEVICE STATUS</div>
-                                <div className="text-xl font-black text-[#111111]">ALL HEALTHY</div>
+
+                            <div className="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm hover:shadow-lg transition-all duration-300">
+                                <div className="flex items-center gap-2 mb-2 text-gray-500 text-sm">
+                                    <Server className="w-4 h-4" /> Tenant Aktif
+                                </div>
+                                <div className="text-2xl font-bold text-gray-900">124</div>
+                                <div className="text-xs font-medium text-green-500 mt-1">+12 bulan ini</div>
                             </div>
-                            <div className="border-[3px] border-[#111111] p-4 bg-white">
-                                <div className="text-sm font-bold text-[#525252]">MONTHLY GROWTH</div>
-                                <div className="text-xl font-black text-[#111111]">+34.5%</div>
+
+                            <div className="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm hover:shadow-lg transition-all duration-300">
+                                <div className="flex items-center gap-2 mb-2 text-gray-500 text-sm">
+                                    <MonitorSmartphone className="w-4 h-4" /> Booth Online
+                                </div>
+                                <div className="text-2xl font-bold text-gray-900">98/100</div>
+                                <div className="text-xs font-medium text-green-500 mt-1">98% uptime</div>
                             </div>
                         </div>
-                    </div>
-                </motion.div>
+                        
+                        {/* Decorative background glow */}
+                        <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/20 blur-[100px] rounded-full"></div>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );

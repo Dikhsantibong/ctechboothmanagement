@@ -1,40 +1,20 @@
-import { Head } from '@inertiajs/react';
-import LandingNavbar from '@/components/landing/LandingNavbar';
+import LandingLayout from '@/layouts/LandingLayout';
 import HeroSection from '@/components/landing/HeroSection';
-import StatsSection from '@/components/landing/StatsSection';
-import ProblemSection from '@/components/landing/ProblemSection';
-import FeaturesSection from '@/components/landing/FeaturesSection';
-import ProductShowcaseSection from '@/components/landing/ProductShowcaseSection';
-import HowItWorksSection from '@/components/landing/HowItWorksSection';
-import WhyPayloSection from '@/components/landing/WhyPayloSection';
-import TestimonialsSection from '@/components/landing/TestimonialsSection';
-import PricingSection from '@/components/landing/PricingSection';
-import FaqSection from '@/components/landing/FaqSection';
-import CtaSection from '@/components/landing/CtaSection';
-import LandingFooter from '@/components/landing/LandingFooter';
+import MetricsSection from '@/components/landing/MetricsSection';
+import NewsSection from '@/components/landing/NewsSection';
+import WorkflowSection from '@/components/landing/WorkflowSection';
+import TestimonialSection from '@/components/landing/TestimonialSection';
+import FinalCtaSection from '@/components/landing/FinalCtaSection';
 
 export default function Welcome() {
     return (
-        <div className="min-h-screen bg-[#F7F5F0] text-[#111111] font-sans selection:bg-[#FF6B00] selection:text-[#111111]">
-            <Head title="PAYLO - Software Management Photobooth Indonesia" />
-            
-            <LandingNavbar />
-            
-            <main>
-                <HeroSection />
-                <StatsSection />
-                <ProblemSection />
-                <FeaturesSection />
-                <ProductShowcaseSection />
-                <HowItWorksSection />
-                <WhyPayloSection />
-                <TestimonialsSection />
-                <PricingSection />
-                <FaqSection />
-                <CtaSection />
-            </main>
-
-            <LandingFooter />
-        </div>
+        <LandingLayout title="ctechbooth - Enterprise Photobooth Management Platform">
+            <HeroSection />
+            <MetricsSection />
+            <NewsSection />
+            <WorkflowSection />
+            <TestimonialSection />
+            <FinalCtaSection />
+        </LandingLayout>
     );
 }

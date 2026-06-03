@@ -1,31 +1,37 @@
 import { Link } from '@inertiajs/react';
 import { motion } from 'framer-motion';
+import { MessageCircle } from 'lucide-react';
 
 export default function LandingNavbar() {
     return (
         <motion.nav 
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            className="fixed w-full z-50 top-0 left-0 border-b-[3px] border-[#111111] bg-[#F7F5F0]"
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            className="fixed w-full z-50 top-0 left-0 bg-white/80 backdrop-blur-md border-b border-gray-200"
         >
-            <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-                <Link href="/" className="text-3xl font-black tracking-tighter text-[#111111]">
-                    PAYLO<span className="text-[#FF6B00]">.</span>
+            <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+                <Link href="/" className="text-xl font-bold tracking-tight text-gray-900 flex items-center gap-2">
+                    <div className="w-6 h-6 bg-blue-600 rounded-md"></div>
+                    ctechbooth
                 </Link>
 
-                <div className="hidden md:flex items-center gap-8 font-bold">
-                    <a href="#fitur" className="hover:text-[#FF6B00] transition-colors">FITUR</a>
-                    <a href="#cara-kerja" className="hover:text-[#FF6B00] transition-colors">CARA KERJA</a>
-                    <a href="#harga" className="hover:text-[#FF6B00] transition-colors">HARGA</a>
+                <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+                    <Link href="/fitur" className="hover:text-gray-900 transition-colors">Fitur</Link>
+                    <Link href="/solusi" className="hover:text-gray-900 transition-colors">Solusi</Link>
+                    <Link href="/harga" className="hover:text-gray-900 transition-colors">Harga</Link>
+                    <Link href="/faq" className="hover:text-gray-900 transition-colors">FAQ</Link>
                 </div>
 
-                <div className="flex items-center gap-4">
-                    <Link href="/login" className="hidden md:block font-bold hover:text-[#FF6B00]">
-                        LOGIN
-                    </Link>
-                    <Link href="/register" className="brutal-btn bg-[#FF6B00] text-[#111111] px-6 py-2 text-sm">
-                        COBA GRATIS
-                    </Link>
+                <div className="flex items-center gap-4 text-sm font-medium">
+                    <a 
+                        href="https://wa.me/628111111111?text=Halo%2C%20saya%20ingin%20mendapatkan%20informasi%20lebih%20lanjut%20mengenai%20ctechbooth." 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 bg-gray-900 text-white px-5 py-2.5 rounded-lg hover:bg-gray-800 transition-colors shadow-sm"
+                    >
+                        <MessageCircle className="w-4 h-4" />
+                        Hubungi Kami
+                    </a>
                 </div>
             </div>
         </motion.nav>

@@ -24,16 +24,24 @@ export default function Login({ status, canResetPassword }: Props) {
 
             <PasskeyVerify />
 
+            {status && (
+                <div className="mb-4 rounded-xl bg-green-50 border border-green-200 p-3 text-center text-sm font-medium text-green-700">
+                    {status}
+                </div>
+            )}
+
             <Form
                 {...store.form()}
                 resetOnSuccess={['password']}
-                className="flex flex-col gap-6"
+                className="flex flex-col gap-5"
             >
                 {({ processing, errors }) => (
                     <>
-                        <div className="grid gap-6">
+                        <div className="grid gap-5">
                             <div className="grid gap-2">
-                                <Label htmlFor="email">Email address</Label>
+                                <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                                    Email address
+                                </Label>
                                 <Input
                                     id="email"
                                     type="email"
@@ -43,20 +51,23 @@ export default function Login({ status, canResetPassword }: Props) {
                                     tabIndex={1}
                                     autoComplete="email"
                                     placeholder="email@example.com"
+                                    className="rounded-xl border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-500 focus:ring-blue-500 transition-colors"
                                 />
                                 <InputError message={errors.email} />
                             </div>
 
                             <div className="grid gap-2">
                                 <div className="flex items-center">
-                                    <Label htmlFor="password">Password</Label>
+                                    <Label htmlFor="password" className="text-sm font-medium text-gray-700">
+                                        Password
+                                    </Label>
                                     {canResetPassword && (
                                         <TextLink
                                             href={request()}
-                                            className="ml-auto text-sm"
+                                            className="ml-auto text-sm text-blue-600 hover:text-blue-700"
                                             tabIndex={5}
                                         >
-                                            Forgot your password?
+                                            Forgot password?
                                         </TextLink>
                                     )}
                                 </div>
@@ -67,6 +78,7 @@ export default function Login({ status, canResetPassword }: Props) {
                                     tabIndex={2}
                                     autoComplete="current-password"
                                     placeholder="Password"
+                                    className="rounded-xl border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-500 focus:ring-blue-500 transition-colors"
                                 />
                                 <InputError message={errors.password} />
                             </div>
@@ -77,12 +89,14 @@ export default function Login({ status, canResetPassword }: Props) {
                                     name="remember"
                                     tabIndex={3}
                                 />
-                                <Label htmlFor="remember">Remember me</Label>
+                                <Label htmlFor="remember" className="text-sm text-gray-600">
+                                    Remember me
+                                </Label>
                             </div>
 
                             <Button
                                 type="submit"
-                                className="mt-4 w-full"
+                                className="mt-2 w-full rounded-xl bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 transition-all shadow-sm hover:shadow-md"
                                 tabIndex={4}
                                 disabled={processing}
                                 data-test="login-button"
@@ -91,17 +105,9 @@ export default function Login({ status, canResetPassword }: Props) {
                                 Log in
                             </Button>
                         </div>
-
-
                     </>
                 )}
             </Form>
-
-            {status && (
-                <div className="mb-4 text-center text-sm font-medium text-green-600">
-                    {status}
-                </div>
-            )}
         </>
     );
 }
