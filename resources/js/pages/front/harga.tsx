@@ -7,8 +7,8 @@ export default function Harga() {
     return (
         <LandingLayout title="Harga & Paket ctechbooth">
             <GenericHeroSection 
-                title="Investasi Transparan Untuk Skala Enterprise"
-                subtitle="Tidak ada biaya tersembunyi. Pilih paket yang paling sesuai dengan kebutuhan ekspansi cabang bisnis Anda."
+                title="Investasi Untuk Ekosistem Photobooth Lengkap"
+                subtitle="Setiap paket mencakup pengalaman photobooth, digital sharing, dan sistem manajemen bisnis. Bukan hanya software, melainkan platform bisnis."
             />
             <PricingSection />
             <FinalCtaSection />

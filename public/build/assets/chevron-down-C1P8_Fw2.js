@@ -1,1 +1,0 @@
-import{P as e}from"./app-8GOS_2K0.js";var t=e(`ChevronDown`,[[`path`,{d:`m6 9 6 6 6-6`,key:`qrunsl`}]]);export{t};

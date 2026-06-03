@@ -19,15 +19,15 @@ export default function HeroSection() {
                               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                             </span>
-                            v2.0 is now live
+                            Platform Photobooth Ecosystem
                         </div>
                         
                         <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 leading-[1.1] mb-6">
-                            Operasional photobooth dalam <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">satu platform.</span>
+                            Seluruh ekosistem photobooth dalam <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">satu platform.</span>
                         </h1>
                         
                         <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl leading-relaxed">
-                            ctechbooth membantu bisnis photobooth mengelola tenant, booth, pelanggan, transaksi, dan laporan secara real-time dari satu dashboard tersentralisasi.
+                            CTECHBOOTH menggabungkan aplikasi photobooth, management dashboard, event experience, printing system, digital sharing, dan business monitoring — semua dalam satu ekosistem terintegrasi.
                         </p>
                         
                         <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -39,15 +39,15 @@ export default function HeroSection() {
                             >
                                 Konsultasi Gratis <ArrowRight className="w-4 h-4" />
                             </a>
-                            <a href="#features" className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-medium text-gray-700 bg-white border border-gray-200 hover:bg-gray-50 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
-                                Lihat Fitur
+                            <a href="/fitur" className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-medium text-gray-700 bg-white border border-gray-200 hover:bg-gray-50 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+                                Jelajahi Fitur
                             </a>
                         </div>
                         
                         <div className="flex flex-wrap items-center gap-6 text-sm font-medium text-gray-500">
-                            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500" /> Cloud Based</div>
+                            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500" /> 8+ Mode Booth</div>
                             <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500" /> Multi Tenant</div>
-                            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500" /> Real Time</div>
+                            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500" /> Digital Sharing</div>
                             <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500" /> Multi Cabang</div>
                         </div>
                     </motion.div>

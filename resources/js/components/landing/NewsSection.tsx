@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar } from 'lucide-react';
+import { Link } from '@inertiajs/react';
 
 export default function NewsSection() {
     const news = [
@@ -35,9 +36,9 @@ export default function NewsSection() {
                             Dapatkan informasi terkini seputar ctechbooth dan industri photobooth.
                         </p>
                     </div>
-                    <a href="#" className="hidden md:inline-flex items-center gap-2 text-blue-600 font-medium hover:text-blue-700 transition-colors">
+                    <Link href="/berita" className="hidden md:inline-flex items-center gap-2 text-blue-600 font-medium hover:text-blue-700 transition-colors">
                         Lihat Semua Artikel <ArrowRight className="w-4 h-4" />
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -72,9 +73,9 @@ export default function NewsSection() {
                     ))}
                 </div>
                 
-                <a href="#" className="mt-8 md:hidden inline-flex items-center gap-2 text-blue-600 font-medium hover:text-blue-700 transition-colors">
+                <Link href="/berita" className="mt-8 md:hidden inline-flex items-center gap-2 text-blue-600 font-medium hover:text-blue-700 transition-colors">
                     Lihat Semua Artikel <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
             </div>
         </section>
     );

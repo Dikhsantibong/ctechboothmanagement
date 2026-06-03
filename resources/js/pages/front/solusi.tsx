@@ -9,8 +9,8 @@ export default function Solusi() {
     return (
         <LandingLayout title="Solusi Operasional ctechbooth">
             <GenericHeroSection 
-                title="Sistem Terpusat, Bisnis Terkendali"
-                subtitle="Tinggalkan cara manual. Pantau status perangkat, ketersediaan kertas printer, hingga transaksi tenant secara langsung."
+                title="Solusi Operasional Bisnis Photobooth End-to-End"
+                subtitle="Dari mesin photobooth hingga laporan keuangan cabang, CTECHBOOTH menyatukan seluruh alur operasional dalam satu platform terintegrasi."
             />
             <OperationsSection />
             <DashboardPreviewSection />
