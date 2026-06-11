@@ -86,51 +86,40 @@ export default function Welcome() {
                     initial="hidden" 
                     animate="visible" 
                     variants={staggerContainer} 
-                    className="max-w-[1280px] mx-auto text-center relative z-10"
+                    className="max-w-[1280px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
                 >
-                    <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-8">
-                        <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                        </span>
-                        SaaS Photobooth Terlengkap di Indonesia
-                    </motion.div>
-                    <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight max-w-4xl mx-auto mb-6 text-foreground">
-                        Bangun Bisnis Photobooth yang Lebih <span className="bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">Modern & Menguntungkan</span>
-                    </motion.h1>
-                    <motion.p variants={fadeInUp} className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-                        Dari Photo Strip hingga Receipt Booth, Flipbook, Magazine Cover, dan konsep photobooth kekinian lainnya dalam satu platform profesional.
-                    </motion.p>
-                    <motion.div variants={fadeInUp} className="flex flex-col md:flex-row items-center justify-center gap-4">
-                        <a href="#demo" className="w-full md:w-auto bg-primary text-primary-foreground h-12 px-8 rounded-lg text-sm font-medium shadow-lg shadow-primary/20 hover:opacity-90 transition-all flex items-center justify-center gap-2">
-                            <PlayCircle className="w-5 h-5" />
-                            Lihat Demo
-                        </a>
-                        <a href="#features" className="w-full md:w-auto bg-background/60 backdrop-blur border border-border h-12 px-8 rounded-lg text-sm font-medium hover:bg-muted/50 transition-all flex items-center justify-center gap-2">
-                            Pelajari Lebih Lanjut
-                        </a>
+                    <div className="text-center lg:text-left">
+                        <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-8">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                            </span>
+                            SaaS Photobooth Terlengkap di Indonesia
+                        </motion.div>
+                        <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6 text-foreground">
+                            Bangun Bisnis Photobooth yang Lebih <span className="bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">Modern & Menguntungkan</span>
+                        </motion.h1>
+                        <motion.p variants={fadeInUp} className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto lg:mx-0">
+                            Dari Photo Strip hingga Receipt Booth, Flipbook, Magazine Cover, dan konsep photobooth kekinian lainnya dalam satu platform profesional.
+                        </motion.p>
+                        <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="#demo" className="w-full sm:w-auto bg-primary text-primary-foreground h-12 px-8 rounded-lg text-sm font-medium shadow-lg shadow-primary/20 hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                                <PlayCircle className="w-5 h-5" />
+                                Lihat Demo
+                            </a>
+                            <a href="#features" className="w-full sm:w-auto bg-background/60 backdrop-blur border border-border h-12 px-8 rounded-lg text-sm font-medium hover:bg-muted/50 transition-all flex items-center justify-center gap-2">
+                                Pelajari Lebih Lanjut
+                            </a>
+                        </motion.div>
+                    </div>
+                    
+                    <motion.div variants={fadeInUp} className="relative mt-12 lg:mt-0">
+                        <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-full blur-3xl -z-10 transform translate-x-10 translate-y-10"></div>
+                        <img src="/hero.png" alt="CTECHBOOTH Hero Mockup" className="w-full max-w-lg mx-auto lg:max-w-full h-auto object-contain drop-shadow-2xl" />
                     </motion.div>
                 </motion.div>
             </section>
 
-            {/* Product Mockup */}
-            <section className="pb-24 px-6 md:px-12 overflow-hidden">
-                <motion.div 
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8 }}
-                    className="max-w-[1280px] mx-auto relative"
-                >
-                    <div className="relative z-10 rounded-2xl border border-border/50 shadow-2xl overflow-hidden bg-background">
-                        <img alt="Dashboard Interface" className="w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_jN18BQL23tYD30ktfvEHIppVAqhKRwt5KK32YvgjL-HbA33dTsTBfD7eRZ3l6TS_6rWez8zbucV3bYJAw74sQDhHHXibO_ZWUOCcDKYyWVkdD5Gq4lS6kCUmRW56Vc_Fk67Q9Nj8b2f-1mQht7fWdVcMogpzFY10shHZ1TYcbql_cF-_9G2Y88yrE8gkkWAp7xBq0A_veMmTZDr77Jj-mfz6V5r6SlgOjDJiFBh0vgixH3u1XfrlyfFjbIR5wmeKdisZs94lnjE" />
-                    </div>
-                    <div className="absolute -bottom-12 -right-12 md:right-12 z-20 w-1/3 min-w-[300px] rounded-xl border border-border/50 shadow-2xl overflow-hidden bg-background hidden md:block transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                        <img alt="Kiosk Interface" className="w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCotmlFeD4J7S7SFXGw6PwDb4JOF1FbGxXdQSr587J0txLZ6RQlGJVFmTbeY19OsVmnbdnQqdslL0OCmXAhH4DQcNLM6rAV4oTiqUA-qZ1T2ucLXO-PJ3hHGZp_YtL4YdwBBQeu2ZWTGSgmKfnLgalqpltsA0B72pRu5XbRB7txMo4jGl-Ev_dVLzEpQ1rCZzL5J1JzvT2aMcRt314eL-qyPzSIO4beETuBvTyhKyyeydpG_p7iRyWyuNpTICizYRFhONReXYFXJBo" />
-                    </div>
-                    <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -z-10"></div>
-                </motion.div>
-            </section>
 
             {/* Concepts Showcase Grid */}
             <section className="py-24 px-6 md:px-12 bg-muted/30" id="concepts">
@@ -390,8 +379,8 @@ export default function Welcome() {
                         initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Pilih Paket Sesuai Bisnis Anda</h2>
-                        <p className="text-muted-foreground">Transparan, kompetitif, dan tanpa biaya tersembunyi.</p>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Pilih Paket yang Sesuai dengan Bisnis Anda</h2>
+                        <p className="text-muted-foreground">Mulai dari satu event hingga ratusan event setiap bulan. Semua paket sudah dilengkapi template photobooth modern dan siap digunakan.</p>
                     </motion.div>
                     
                     <motion.div 
@@ -401,85 +390,130 @@ export default function Welcome() {
                         {/* Starter */}
                         <motion.div variants={fadeInUp} className="p-8 bg-background border border-border rounded-2xl flex flex-col hover:border-primary/50 hover:shadow-lg transition-all duration-300">
                             <h3 className="text-xl font-bold mb-2">Starter</h3>
-                            <p className="text-muted-foreground text-sm mb-6">Cocok untuk operator baru.</p>
+                            <p className="text-muted-foreground text-sm mb-6">Cocok untuk pemula yang baru memulai bisnis photobooth.</p>
                             <div className="mb-8">
-                                <span className="text-4xl font-extrabold tracking-tight">Rp 499rb</span>
-                                <span className="text-muted-foreground font-medium">/bln</span>
+                                <span className="text-4xl font-extrabold tracking-tight">Rp199.000</span>
+                                <span className="text-muted-foreground font-medium">/bulan</span>
                             </div>
                             <ul className="space-y-4 mb-10 flex-grow text-sm">
                                 <li className="flex items-center gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                                    <span>Max 1 Booth Active</span>
+                                    <span>Template Strip</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                                    <span>Classic Photo Strip</span>
+                                    <span>Template Reguler</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                                    <span>Template Koran</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                                    <span>Template Polaroid</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
                                     <span>QR Download</span>
                                 </li>
-                                <li className="flex items-center gap-3 text-muted-foreground/60">
-                                    <Ban className="w-5 h-5 flex-shrink-0" />
-                                    <span>No Analytics Dashboard</span>
+                                <li className="flex items-center gap-3">
+                                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                                    <span>WhatsApp Sharing</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                                    <span>1 Device</span>
                                 </li>
                             </ul>
-                            <button className="w-full py-3 rounded-xl border border-primary text-primary font-bold hover:bg-primary/5 transition-colors">Pilih Paket</button>
+                            <button className="w-full py-3 rounded-xl border border-primary text-primary font-bold hover:bg-primary/5 transition-colors">Mulai Sekarang</button>
                         </motion.div>
 
-                        {/* Professional */}
+                        {/* Growth */}
                         <motion.div variants={fadeInUp} className="p-8 bg-background border-2 border-primary rounded-2xl flex flex-col relative shadow-2xl shadow-primary/10 transform md:-translate-y-4">
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-bold tracking-wider">MOST POPULAR</div>
-                            <h3 className="text-xl font-bold mb-2">Professional</h3>
-                            <p className="text-muted-foreground text-sm mb-6">Untuk vendor event reguler.</p>
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-bold tracking-wider">⭐ PALING POPULER</div>
+                            <h3 className="text-xl font-bold mb-2">Growth</h3>
+                            <p className="text-muted-foreground text-sm mb-6">Pilihan terbaik untuk vendor photobooth yang aktif menerima event.</p>
                             <div className="mb-8">
-                                <span className="text-4xl font-extrabold tracking-tight">Rp 1.4jt</span>
-                                <span className="text-muted-foreground font-medium">/bln</span>
+                                <span className="text-4xl font-extrabold tracking-tight">Rp399.000</span>
+                                <span className="text-muted-foreground font-medium">/bulan</span>
                             </div>
                             <ul className="space-y-4 mb-10 flex-grow text-sm">
                                 <li className="flex items-center gap-3 font-medium">
                                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                                    <span>Max 5 Booths Active</span>
+                                    <span>Semua fitur Starter</span>
                                 </li>
                                 <li className="flex items-center gap-3 font-medium">
                                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                                    <span>Semua Konsep Kreatif</span>
+                                    <span>Magazine Cover</span>
                                 </li>
                                 <li className="flex items-center gap-3 font-medium">
                                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                                    <span>Full Analytics Dashboard</span>
+                                    <span>Passport Style</span>
                                 </li>
                                 <li className="flex items-center gap-3 font-medium">
                                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                                    <span>Custom Branding (White Label)</span>
+                                    <span>Wedding & Birthday Templates</span>
+                                </li>
+                                <li className="flex items-center gap-3 font-medium">
+                                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                                    <span>GIF Booth</span>
+                                </li>
+                                <li className="flex items-center gap-3 font-medium">
+                                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                                    <span>Boomerang</span>
+                                </li>
+                                <li className="flex items-center gap-3 font-medium">
+                                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                                    <span>Cloud Gallery</span>
+                                </li>
+                                <li className="flex items-center gap-3 font-medium">
+                                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                                    <span>Custom Branding</span>
+                                </li>
+                                <li className="flex items-center gap-3 font-medium">
+                                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                                    <span>3 Device</span>
                                 </li>
                             </ul>
-                            <button className="w-full py-3.5 rounded-xl bg-primary text-primary-foreground font-bold hover:opacity-90 transition-opacity shadow-lg shadow-primary/30">Mulai Sekarang</button>
+                            <button className="w-full py-3.5 rounded-xl bg-primary text-primary-foreground font-bold hover:opacity-90 transition-opacity shadow-lg shadow-primary/30">Mulai Berlangganan</button>
                         </motion.div>
 
-                        {/* Enterprise */}
+                        {/* Pro */}
                         <motion.div variants={fadeInUp} className="p-8 bg-background border border-border rounded-2xl flex flex-col hover:border-primary/50 hover:shadow-lg transition-all duration-300">
-                            <h3 className="text-xl font-bold mb-2">Enterprise</h3>
-                            <p className="text-muted-foreground text-sm mb-6">Skala besar & kustomisasi.</p>
+                            <h3 className="text-xl font-bold mb-2">Pro</h3>
+                            <p className="text-muted-foreground text-sm mb-6">Untuk agency dan vendor profesional dengan kebutuhan event yang lebih besar.</p>
                             <div className="mb-8">
-                                <span className="text-4xl font-extrabold tracking-tight">Custom</span>
+                                <span className="text-4xl font-extrabold tracking-tight">Rp699.000</span>
+                                <span className="text-muted-foreground font-medium">/bulan</span>
                             </div>
                             <ul className="space-y-4 mb-10 flex-grow text-sm">
                                 <li className="flex items-center gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                                    <span>Unlimited Booths</span>
+                                    <span>Semua fitur Growth</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                                    <span>Dedicated Account Manager</span>
+                                    <span>Video Booth</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                                    <span>API Access & Integration</span>
+                                    <span>AI Background Removal</span>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                                    <span>SLA Support 24/7</span>
+                                    <span>Green Screen</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                                    <span>White Label</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                                    <span>Unlimited Device</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                                    <span>Priority Support</span>
                                 </li>
                             </ul>
                             <button className="w-full py-3 rounded-xl bg-muted text-foreground font-bold hover:bg-muted/80 transition-colors">Hubungi Sales</button>
