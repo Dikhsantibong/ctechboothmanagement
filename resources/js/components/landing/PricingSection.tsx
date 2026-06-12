@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Check, Minus, MessageCircle } from 'lucide-react';
 
-const phoneNumber = "628111111111";
+const phoneNumber = "6282293118410";
 const getWaLink = (message: string) => `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
 const plans = [

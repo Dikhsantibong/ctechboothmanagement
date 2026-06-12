@@ -1,0 +1,1 @@
+import{F as e}from"./app-9vX6AUT_.js";var t=e(`ChevronDown`,[[`path`,{d:`m6 9 6 6 6-6`,key:`qrunsl`}]]);export{t};

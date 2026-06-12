@@ -32,7 +32,7 @@ export default function LandingNavbar() {
 
                     <div className="hidden md:flex items-center gap-4 text-sm font-medium">
                         <a 
-                            href="https://wa.me/628111111111?text=Halo%2C%20saya%20ingin%20mendapatkan%20informasi%20lebih%20lanjut%20mengenai%20ctechbooth." 
+                            href="https://wa.me/6282293118410?text=Halo%2C%20saya%20ingin%20mendapatkan%20informasi%20lebih%20lanjut%20mengenai%20ctechbooth." 
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 bg-gray-900 text-white px-5 py-2.5 rounded-lg hover:bg-gray-800 transition-colors shadow-sm"
@@ -71,7 +71,7 @@ export default function LandingNavbar() {
                             <Link href="/faq" onClick={toggleMenu} className="hover:text-blue-600 transition-colors border-b border-gray-100 pb-4">FAQ</Link>
                             
                             <a 
-                                href="https://wa.me/628111111111?text=Halo%2C%20saya%20ingin%20mendapatkan%20informasi%20lebih%20lanjut%20mengenai%20ctechbooth." 
+                                href="https://wa.me/6282293118410?text=Halo%2C%20saya%20ingin%20mendapatkan%20informasi%20lebih%20lanjut%20mengenai%20ctechbooth." 
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center justify-center gap-2 bg-gray-900 text-white px-5 py-4 rounded-xl hover:bg-gray-800 transition-colors shadow-sm mt-4"

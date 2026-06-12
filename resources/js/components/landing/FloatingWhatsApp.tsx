@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 export default function FloatingWhatsApp() {
-    const phoneNumber = "628111111111"; // Ganti dengan nomor asli
+    const phoneNumber = "6282293118410"; // Ganti dengan nomor asli
     const message = encodeURIComponent("Halo, saya ingin konsultasi mengenai kebutuhan software photobooth dan paket ctechbooth yang paling sesuai untuk bisnis saya.");
     const waUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 

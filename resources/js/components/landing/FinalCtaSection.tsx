@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
 
 export default function FinalCtaSection() {
-    const phoneNumber = "628111111111"; // Ganti dengan nomor asli
+    const phoneNumber = "6282293118410"; // Ganti dengan nomor asli
     
     const getWaLink = (message: string) => {
         return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

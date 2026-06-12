@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
+import { Head } from '@inertiajs/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     PlayCircle, Camera, QrCode, LayoutDashboard, Network, Layout, Printer, LineChart,
-    Newspaper, Ticket, Video, CheckCircle2, Ban, ChevronDown, Send, Globe, AtSign, Menu, X
+    Newspaper, Ticket, Video, CheckCircle2, Ban, ChevronDown, Send, Globe, AtSign, Menu, X, Download
 } from 'lucide-react';
 
 export default function Welcome() {
@@ -29,7 +30,9 @@ export default function Welcome() {
     };
 
     return (
-        <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 selection:text-primary">
+        <>
+            <Head title="Ctechbooth - SelfPhoto App" />
+            <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 selection:text-primary">
             {/* TopNavBar */}
             <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-background/80 backdrop-blur-xl border-b border-border shadow-sm h-16' : 'bg-transparent h-20'}`}>
                 <div className="flex justify-between items-center w-full px-6 md:px-12 max-w-[1280px] mx-auto h-full">
@@ -37,15 +40,15 @@ export default function Welcome() {
                     
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center gap-8">
-                        <a className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors" href="#features">Features</a>
-                        <a className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors" href="#concepts">Concepts</a>
-                        <a className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors" href="#pricing">Pricing</a>
+                        <a className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors" href="#features">Fitur</a>
+                        <a className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors" href="#concepts">Konsep</a>
+                        <a className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors" href="#pricing">Harga</a>
                         <a className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors" href="#faq">FAQ</a>
                     </div>
 
                     <div className="hidden md:flex items-center gap-4">
                         <a href="#demo" className="bg-primary/10 text-primary px-6 py-2 rounded-full text-sm font-medium hover:bg-primary/20 transition-colors">
-                            Get Started
+                            Mulai Sekarang
                         </a>
                     </div>
 
@@ -66,13 +69,13 @@ export default function Welcome() {
                         className="fixed inset-x-0 top-[64px] bg-background border-b border-border shadow-lg z-40 md:hidden overflow-hidden"
                     >
                         <div className="flex flex-col space-y-4 p-6">
-                            <a href="#features" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-foreground">Features</a>
-                            <a href="#concepts" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-foreground">Concepts</a>
-                            <a href="#pricing" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-foreground">Pricing</a>
+                            <a href="#features" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-foreground">Fitur</a>
+                            <a href="#concepts" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-foreground">Konsep</a>
+                            <a href="#pricing" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-foreground">Harga</a>
                             <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-foreground">FAQ</a>
                             <hr className="border-border my-2" />
                             <a href="#demo" onClick={() => setMobileMenuOpen(false)} className="bg-primary text-primary-foreground text-center py-3 rounded-xl font-medium w-full">
-                                Get Started
+                                Mulai Sekarang
                             </a>
                         </div>
                     </motion.div>
@@ -80,8 +83,8 @@ export default function Welcome() {
             </AnimatePresence>
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 px-6 md:px-12 overflow-hidden">
-                <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-background to-background"></div>
+            <section className="relative pt-32 pb-20 px-6 md:px-12 overflow-hidden bg-black">
+                <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-black to-black"></div>
                 <motion.div 
                     initial="hidden" 
                     animate="visible" 
@@ -107,8 +110,9 @@ export default function Welcome() {
                                 <PlayCircle className="w-5 h-5" />
                                 Lihat Demo
                             </a>
-                            <a href="#features" className="w-full sm:w-auto bg-background/60 backdrop-blur border border-border h-12 px-8 rounded-lg text-sm font-medium hover:bg-muted/50 transition-all flex items-center justify-center gap-2">
-                                Pelajari Lebih Lanjut
+                            <a href="/penawaran_photoboth_ctech.pdf" download className="w-full sm:w-auto bg-background/60 backdrop-blur border border-border h-12 px-8 rounded-lg text-sm font-medium hover:bg-muted/50 transition-all flex items-center justify-center gap-2">
+                                <Download className="w-5 h-5" />
+                                Download Penawaran
                             </a>
                         </motion.div>
                     </div>
@@ -139,7 +143,7 @@ export default function Welcome() {
                         {/* Main Concepts */}
                         <div className="md:col-span-1 flex flex-col gap-6">
                             <motion.div variants={fadeInUp} className="group relative bg-background rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all duration-300">
-                                <div className="aspect-[4/3] overflow-hidden">
+                                <div className="aspect-[16/9] overflow-hidden">
                                     <img alt="Photo Strip" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkWQQAT-rprBhnwvJNc-J2KVIh3Uq-JvvRHGhPt7xR6tNQIH20pRSt6eDdXT60YHQizAeSoFKlYbh5XMxuFiIO1gGqd1ap_nfaB5-PJGvk7usmfzSlJ6P35XlTOnMqsm95Cxg11YJ_HvqIrEepqgu3vKWw_WFfRCUgFz5Cn4BNjKGmWmQ2BnC06Av6x-4jkuHHoevYsuzhQoSlB83JoghwvmaHJhMiD5msG6Ody7jqm1CNCQFjWYuK06w6y4go6XT6tsPXjFQI0Ic" />
                                 </div>
                                 <div className="p-6">
@@ -150,7 +154,7 @@ export default function Welcome() {
                             </motion.div>
                             
                             <motion.div variants={fadeInUp} className="group relative bg-background rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all duration-300">
-                                <div className="aspect-[4/3] overflow-hidden">
+                                <div className="aspect-[16/9] overflow-hidden">
                                     <img alt="Magazine Cover" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8NNoTmIFoPM1pLYVg0nmw0-fobZ_XhbENudxCUmJ43pi9DiPr-aLo1vCtqvqKLvYHbadjiShOCmoQPPKEB9pOIQuEc_p7NYQVbHP1yi3V0NA985mkiAWJ8BrbeRXTIU1EH9z9UnElOLaBFJcq_IP3BdBUPtp4fTruNLz-14DpURseNTebZpSJGUHWZG0DGpcbcw9JYx17oBiqLSm6mPwCKd_hEk1xLP1zfeYBWPcBxuq-HovEFb8u7b-Cz73xK7qigK7CJpL1Qv8" />
                                 </div>
                                 <div className="p-6">
@@ -522,6 +526,37 @@ export default function Welcome() {
                 </div>
             </section>
 
+            {/* Partners Section */}
+            <section className="py-24 px-6 md:px-12 bg-muted/30">
+                <div className="max-w-[1280px] mx-auto">
+                    <motion.div 
+                        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Mitra Kami</h2>
+                        <p className="text-base text-muted-foreground">Dipercaya oleh berbagai vendor photobooth dan event organizer di seluruh Indonesia</p>
+                    </motion.div>
+                    
+                    <motion.div 
+                        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+                        className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center"
+                    >
+                        {[
+                            { name: "Partner 1", image: "/partner/partner1.png" },
+                            { name: "Partner 2", image: "/partner/partner2.png" },
+                        ].map((partner, i) => (
+                            <motion.div key={i} variants={fadeInUp} className="flex flex-col items-center">
+                                <img 
+                                    src={partner.image} 
+                                    alt={partner.name}
+                                    className="w-24 h-24 md:w-32 md:h-32 object-contain rounded-2xl"
+                                />
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </div>
+            </section>
+
             {/* FAQ Section */}
             <section className="py-24 px-6 md:px-12" id="faq">
                 <div className="max-w-3xl mx-auto">
@@ -649,5 +684,6 @@ export default function Welcome() {
                 </div>
             </footer>
         </div>
+        </>
     );
 }
