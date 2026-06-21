@@ -21,7 +21,7 @@ return new class extends Migration
             $table->boolean('is_enabled')->default(true);
             $table->timestamps();
 
-            $table->unique(['subscription_plan_id', 'feature_key']);
+            $table->unique(['subscription_plan_id', 'feature_key'], 'plan_id_feature_key_unique');
         });
     }
 
