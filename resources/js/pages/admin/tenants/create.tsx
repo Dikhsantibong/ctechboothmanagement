@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { ArrowLeft, Save } from 'lucide-react';
 
-export default function TenantCreate() {
+export default function TenantCreate({ plans = [] }: { plans: any[] }) {
     const { data, setData, post, processing, errors } = useForm({
         business_name: '',
         owner_name: '',
@@ -14,9 +14,9 @@ export default function TenantCreate() {
         phone: '',
         city: '',
         address: '',
-        status: 'trial',
-        trial_ends_at: '',
+        status: 'active',
         slug: '',
+        subscription_plan_id: '',
     });
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -151,6 +151,27 @@ export default function TenantCreate() {
 
                             <div className="grid gap-6 md:grid-cols-2">
                                 <div className="space-y-2">
+                                    <Label htmlFor="subscription_plan_id">Paket Langganan *</Label>
+                                    <Select
+                                        value={data.subscription_plan_id}
+                                        onValueChange={(value) => setData('subscription_plan_id', value)}
+                                    >
+                                        <SelectTrigger>
+                                            <SelectValue placeholder="Pilih paket langganan" />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            {plans.map((plan) => (
+                                                <SelectItem key={plan.id} value={plan.id.toString()}>
+                                                    {plan.name} - {plan.currency} {plan.price} ({plan.duration_days} Hari)
+                                                </SelectItem>
+                                            ))}
+                                        </SelectContent>
+                                    </Select>
+                                    {errors.subscription_plan_id && (
+                                        <p className="text-sm text-destructive">{errors.subscription_plan_id}</p>
+                                    )}
+                                </div>
+                                <div className="space-y-2">
                                     <Label htmlFor="status">Status *</Label>
                                     <Select
                                         value={data.status}
@@ -161,26 +182,12 @@ export default function TenantCreate() {
                                         </SelectTrigger>
                                         <SelectContent>
                                             <SelectItem value="active">Aktif</SelectItem>
-                                            <SelectItem value="trial">Trial</SelectItem>
                                             <SelectItem value="inactive">Nonaktif</SelectItem>
                                             <SelectItem value="suspended">Suspend</SelectItem>
                                         </SelectContent>
                                     </Select>
                                     {errors.status && (
                                         <p className="text-sm text-destructive">{errors.status}</p>
-                                    )}
-                                </div>
-
-                                <div className="space-y-2">
-                                    <Label htmlFor="trial_ends_at">Tanggal Berakhir Trial</Label>
-                                    <Input
-                                        id="trial_ends_at"
-                                        type="date"
-                                        value={data.trial_ends_at}
-                                        onChange={(e) => setData('trial_ends_at', e.target.value)}
-                                    />
-                                    {errors.trial_ends_at && (
-                                        <p className="text-sm text-destructive">{errors.trial_ends_at}</p>
                                     )}
                                 </div>
                             </div>

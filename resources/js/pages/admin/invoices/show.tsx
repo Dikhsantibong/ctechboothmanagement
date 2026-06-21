@@ -77,6 +77,12 @@ export default function InvoiceShow({ invoice }: { invoice: Invoice }) {
                             <Printer className="mr-2 h-4 w-4" />
                             Cetak
                         </Button>
+                        <a href={`/admin/invoices/${invoice.id}/pdf`} target="_blank" rel="noopener noreferrer">
+                            <Button variant="outline">
+                                <Printer className="mr-2 h-4 w-4" />
+                                Download PDF
+                            </Button>
+                        </a>
                         <Link href={`/admin/invoices/${invoice.id}/edit`}>
                             <Button variant="outline">
                                 <Edit className="mr-2 h-4 w-4" />

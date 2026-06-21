@@ -35,6 +35,7 @@ class TenantStoreRequest extends FormRequest
             'logo' => ['nullable', 'string', 'max:500'],
             'slug' => ['required', 'string', 'max:255', 'unique:tenants,slug'],
             'settings' => ['nullable', 'array'],
+            'subscription_plan_id' => ['required', 'exists:subscription_plans,id'],
         ];
     }
 
@@ -61,6 +62,8 @@ class TenantStoreRequest extends FormRequest
             'status.in' => 'Status tidak valid.',
             'slug.required' => 'Slug wajib diisi.',
             'slug.unique' => 'Slug sudah digunakan.',
+            'subscription_plan_id.required' => 'Paket langganan wajib dipilih.',
+            'subscription_plan_id.exists' => 'Paket langganan tidak valid.',
         ];
     }
 }

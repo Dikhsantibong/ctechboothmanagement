@@ -10,6 +10,7 @@ use App\Models\SubscriptionPlan;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class InvoiceController extends Controller
 {
@@ -212,5 +213,17 @@ class InvoiceController extends Controller
         ]);
 
         return redirect()->route('admin.invoices.index');
+    }
+
+    /**
+     * Download Invoice PDF
+     */
+    public function downloadPdf(Invoice $invoice)
+    {
+        $invoice->load(['tenant', 'items']);
+        
+        $pdf = Pdf::loadView('pdf.invoice', compact('invoice'));
+        
+        return $pdf->download($invoice->invoice_number . '.pdf');
     }
 }

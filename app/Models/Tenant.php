@@ -29,6 +29,27 @@ class Tenant extends Model
     /** @use HasFactory<TenantFactory> */
     use HasFactory, SoftDeletes;
 
+    protected static function booted()
+    {
+        static::deleting(function ($tenant) {
+            if ($tenant->isForceDeleting()) {
+                $tenant->subscriptions()->forceDelete();
+                $tenant->invoices()->forceDelete();
+                $tenant->activityLogs()->forceDelete();
+                $tenant->supportTickets()->forceDelete();
+                $tenant->notificationLogs()->forceDelete();
+                $tenant->usageEvents()->forceDelete();
+            } else {
+                $tenant->subscriptions()->delete();
+                $tenant->invoices()->delete();
+                $tenant->activityLogs()->delete();
+                $tenant->supportTickets()->delete();
+                $tenant->notificationLogs()->delete();
+                $tenant->usageEvents()->delete();
+            }
+        });
+    }
+
     /**
      * Get the attributes that should be cast.
      *

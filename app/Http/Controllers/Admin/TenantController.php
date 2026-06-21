@@ -9,6 +9,9 @@ use App\Models\Tenant;
 use App\Models\TenantSubscription;
 use App\Models\SubscriptionPayment;
 use App\Models\TenantActivityLog;
+use App\Models\SubscriptionPlan;
+use App\Models\Invoice;
+use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -66,7 +69,10 @@ class TenantController extends Controller
      */
     public function create(): Response
     {
-        return Inertia::render('admin/tenants/create');
+        $plans = SubscriptionPlan::where('is_active', true)->get(['id', 'name', 'price', 'currency', 'duration_days', 'description']);
+        return Inertia::render('admin/tenants/create', [
+            'plans' => $plans
+        ]);
     }
 
     /**
@@ -74,11 +80,58 @@ class TenantController extends Controller
      */
     public function store(TenantStoreRequest $request): RedirectResponse
     {
-        $tenant = Tenant::create($request->validated());
+        $validated = $request->validated();
+        
+        $planId = $validated['subscription_plan_id'];
+        unset($validated['subscription_plan_id']);
+
+        $tenant = Tenant::create($validated);
+        
+        $plan = SubscriptionPlan::findOrFail($planId);
+        
+        $startDate = Carbon::now();
+        $endDate = Carbon::now()->addDays($plan->duration_days);
+        
+        $subscription = TenantSubscription::create([
+            'tenant_id' => $tenant->id,
+            'subscription_plan_id' => $plan->id,
+            'status' => 'active',
+            'start_date' => $startDate,
+            'end_date' => $endDate,
+        ]);
+        
+        $lastInvoice = Invoice::orderBy('id', 'desc')->first();
+        $nextId = $lastInvoice ? $lastInvoice->id + 1 : 1;
+        $invoiceNumber = 'INV-' . date('Ymd') . '-' . str_pad($nextId, 4, '0', STR_PAD_LEFT);
+        
+        $invoice = Invoice::create([
+            'tenant_id' => $tenant->id,
+            'invoice_number' => $invoiceNumber,
+            'customer_name' => $tenant->owner_name,
+            'customer_email' => $tenant->email,
+            'customer_phone' => $tenant->phone ?? '-',
+            'customer_address' => $tenant->address ?? '-',
+            'issue_date' => $startDate,
+            'due_date' => $startDate,
+            'status' => 'paid',
+            'subtotal' => $plan->price,
+            'tax' => 0,
+            'discount' => 0,
+            'total' => $plan->price,
+            'notes' => 'Otomatis dibuat untuk pendaftaran awal',
+        ]);
+        
+        $invoice->items()->create([
+            'item_name' => 'Paket Langganan: ' . $plan->name,
+            'description' => 'Berlangganan ' . $plan->duration_days . ' hari.',
+            'quantity' => 1,
+            'unit_price' => $plan->price,
+            'total_price' => $plan->price,
+        ]);
 
         session()->flash('toast', [
             'type' => 'success',
-            'message' => 'Tenant berhasil ditambahkan.',
+            'message' => 'Tenant, langganan, dan tagihan berhasil dibuat.',
         ]);
 
         $this->logActivity('create', 'tenants', 'Membuat tenant baru: ' . $tenant->business_name, $tenant);
