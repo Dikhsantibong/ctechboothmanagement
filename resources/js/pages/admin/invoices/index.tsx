@@ -116,7 +116,7 @@ export default function InvoiceIndex({ invoices, filters }: any) {
                                             <td className="py-3 px-4">
                                                 <div>{invoice.customer_name}</div>
                                                 {invoice.tenant && (
-                                                    <div className="text-xs text-muted-foreground">{invoice.tenant.business_name}</div>
+                                                    <div className="text-xs text-muted-foreground">{invoice.tenant?.business_name || '-'}</div>
                                                 )}
                                             </td>
                                             <td className="py-3 px-4">{new Date(invoice.issue_date).toLocaleDateString('id-ID')}</td>

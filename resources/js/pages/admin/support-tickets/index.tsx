@@ -141,7 +141,7 @@ export default function SupportTicketIndex({ tickets }: PageProps) {
                                         <tr key={ticket.id} className="border-b hover:bg-muted/50">
                                             <td className="px-4 py-3 text-sm font-medium">{ticket.ticket_number}</td>
                                             <td className="px-4 py-3 text-sm">{ticket.subject}</td>
-                                            <td className="px-4 py-3 text-sm">{ticket.tenant.business_name}</td>
+                                            <td className="px-4 py-3 text-sm">{ticket.tenant?.business_name || '-'}</td>
                                             <td className="px-4 py-3 text-sm">{getStatusBadge(ticket.status)}</td>
                                             <td className="px-4 py-3 text-sm">{getPriorityBadge(ticket.priority)}</td>
                                             <td className="px-4 py-3 text-sm">{getCategoryBadge(ticket.category)}</td>

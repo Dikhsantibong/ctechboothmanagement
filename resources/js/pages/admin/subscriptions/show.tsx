@@ -124,26 +124,26 @@ export default function SubscriptionShow({ subscription }: PageProps) {
     };
 
     const handleRenew = () => {
-        if (confirm('Apakah Anda yakin ingin memperpanjang langganan ini?')) {
-            router.post(`/admin/tenants/${subscription.tenant.id}/subscriptions/${subscription.id}/renew`);
+        if (subscription.tenant && confirm('Apakah Anda yakin ingin memperpanjang langganan ini?')) {
+            router.post(`/admin/tenants/${subscription.tenant?.id}/subscriptions/${subscription.id}/renew`);
         }
     };
 
     const handleCancel = () => {
-        if (confirm('Apakah Anda yakin ingin membatalkan langganan ini?')) {
-            router.post(`/admin/tenants/${subscription.tenant.id}/subscriptions/${subscription.id}/cancel`);
+        if (subscription.tenant && confirm('Apakah Anda yakin ingin membatalkan langganan ini?')) {
+            router.post(`/admin/tenants/${subscription.tenant?.id}/subscriptions/${subscription.id}/cancel`);
         }
     };
 
     const handleSuspend = () => {
-        if (confirm('Apakah Anda yakin ingin men-suspend langganan ini?')) {
-            router.post(`/admin/tenants/${subscription.tenant.id}/subscriptions/${subscription.id}/suspend`);
+        if (subscription.tenant && confirm('Apakah Anda yakin ingin men-suspend langganan ini?')) {
+            router.post(`/admin/tenants/${subscription.tenant?.id}/subscriptions/${subscription.id}/suspend`);
         }
     };
 
     const handleActivate = () => {
-        if (confirm('Apakah Anda yakin ingin mengaktifkan langganan ini?')) {
-            router.post(`/admin/tenants/${subscription.tenant.id}/subscriptions/${subscription.id}/activate`);
+        if (subscription.tenant && confirm('Apakah Anda yakin ingin mengaktifkan langganan ini?')) {
+            router.post(`/admin/tenants/${subscription.tenant?.id}/subscriptions/${subscription.id}/activate`);
         }
     };
 
@@ -210,8 +210,8 @@ export default function SubscriptionShow({ subscription }: PageProps) {
                                     <Building2 className="mt-1 h-5 w-5 text-muted-foreground" />
                                     <div>
                                         <p className="text-sm font-medium">Tenant</p>
-                                        <p className="text-sm text-muted-foreground">{subscription.tenant.business_name}</p>
-                                        <p className="text-xs text-muted-foreground">{subscription.tenant.owner_name}</p>
+                                        <p className="text-sm text-muted-foreground">{subscription.tenant?.business_name || '-'}</p>
+                                        <p className="text-xs text-muted-foreground">{subscription.tenant?.owner_name || '-'}</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3">
@@ -330,18 +330,18 @@ export default function SubscriptionShow({ subscription }: PageProps) {
                         <div className="grid gap-4 md:grid-cols-2">
                             <div>
                                 <p className="text-sm font-medium">Nama Usaha</p>
-                                <p className="text-sm text-muted-foreground">{subscription.tenant.business_name}</p>
+                                <p className="text-sm text-muted-foreground">{subscription.tenant?.business_name || '-'}</p>
                             </div>
                             <div>
                                 <p className="text-sm font-medium">Pemilik</p>
-                                <p className="text-sm text-muted-foreground">{subscription.tenant.owner_name}</p>
+                                <p className="text-sm text-muted-foreground">{subscription.tenant?.owner_name || '-'}</p>
                             </div>
                             <div>
                                 <p className="text-sm font-medium">Email</p>
-                                <p className="text-sm text-muted-foreground">{subscription.tenant.email}</p>
+                                <p className="text-sm text-muted-foreground">{subscription.tenant?.email || '-'}</p>
                             </div>
                             <div className="flex items-center gap-2">
-                                <Link href={`/admin/tenants/${subscription.tenant.id}`}>
+                                <Link href={`/admin/tenants/${subscription.tenant?.id}`}>
                                     <Button variant="outline" size="sm">
                                         <Eye className="mr-2 h-4 w-4" />
                                         Lihat Tenant

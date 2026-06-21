@@ -219,7 +219,7 @@ export default function SubscriptionIndex({ subscriptions, filters }: PageProps)
                                 <tbody>
                                     {subscriptions.data.map((subscription) => (
                                         <tr key={subscription.id} className="border-b hover:bg-muted/50">
-                                            <td className="px-4 py-3 text-sm font-medium">{subscription.tenant.business_name}</td>
+                                            <td className="px-4 py-3 text-sm font-medium">{subscription.tenant?.business_name || '-'}</td>
                                             <td className="px-4 py-3 text-sm">{subscription.subscription_plan.name}</td>
                                             <td className="px-4 py-3 text-sm">
                                                 {new Intl.NumberFormat('id-ID', {
@@ -240,7 +240,7 @@ export default function SubscriptionIndex({ subscriptions, filters }: PageProps)
                                                             <Eye className="h-4 w-4" />
                                                         </Button>
                                                     </Link>
-                                                    {(subscription.calculated_status === 'active' || subscription.calculated_status === 'expiring') && (
+                                                    {(subscription.calculated_status === 'active' || subscription.calculated_status === 'expiring') && subscription.tenant && (
                                                         <button
                                                             onClick={() => {
                                                                 if (confirm('Apakah Anda yakin ingin memperpanjang langganan ini?')) {
